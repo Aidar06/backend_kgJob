@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import router from "./router.js";
 import fileUpload from "express-fileupload";
 import axios from "axios";
+import cors from "cors";
 
 const PORT = process.env.PORT || 5000
 
@@ -13,6 +14,8 @@ const app = express()
 app.use(express.json())
 app.use(fileUpload({}))
 app.use('/api', router)
+app.use(cors());
+
 
 
 async function startApp(){
