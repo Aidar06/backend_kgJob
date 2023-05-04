@@ -2,8 +2,9 @@ import express from 'express'
 import mongoose from 'mongoose'
 import router from "./router.js";
 import fileUpload from "express-fileupload";
+import axios from "axios";
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 const DB_URL = `mongodb+srv://user:user@cluster0.sjt64hj.mongodb.net/?retryWrites=true&w=majority`
 
@@ -24,3 +25,4 @@ async function startApp(){
 }
 
 startApp()
+
